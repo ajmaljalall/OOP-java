@@ -1,0 +1,30 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class FileReaderExample 
+{
+  public static void main(String args[]) 
+  {
+    String fileName = "temp.txt";
+    String line = null;
+
+    try 
+    {
+      FileReader fr = new FileReader(fileName);
+      BufferedReader br = new BufferedReader(fr);
+
+      int lineNumber = 1;
+      while((line = br.readLine()) != null) 
+      {
+        System.out.println(lineNumber + ": " + line);
+        lineNumber++;
+      }
+      br.close();
+    }
+    catch(IOException ex) 
+    {
+      System.out.println("Error reading file '" + fileName + "'");
+    }
+  }
+}
