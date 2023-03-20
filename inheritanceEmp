@@ -1,0 +1,81 @@
+import java.util.Scanner;
+class Employee 
+{
+  String name;
+  int age;
+  long phoneNumber;
+  String address;
+  double salary;
+  
+  void printSalary() 
+  {
+    System.out.println("Salary: " + salary);
+  }
+}
+
+class Officer extends Employee 
+{
+  String specialization;
+}
+
+class Manager extends Employee 
+{
+  String department;
+}
+
+public class Main 
+{
+  public static void main(String args[]) 
+  {
+    // Create an Officer object
+    Officer off = new Officer();
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter Officer's Name: ");
+    off.name = sc.nextLine();
+    System.out.println("Enter Officer's Age: ");
+    off.age = sc.nextInt();
+    System.out.println("Enter Officer's Phone Number: ");
+    off.phoneNumber = sc.nextLong();
+        sc.nextLine();
+    System.out.println("Enter Officer's Address: ");
+    off.address = sc.nextLine();
+    System.out.println("Enter Officer's Salary: ");
+    off.salary = sc.nextDouble();
+    System.out.println("Enter Officer's Specialization: ");
+    off.specialization = sc.nextLine();
+
+    // Create a Manager object
+    Manager man = new Manager();
+    System.out.println("Enter Manager's Name: ");
+    man.name = sc.nextLine();
+    System.out.println("Enter Manager's Age: ");
+    man.age = sc.nextInt();
+    System.out.println("Enter Manager's Phone Number: ");
+    man.phoneNumber = sc.nextLong();
+    sc.nextLine();
+    System.out.println("Enter Manager's Address: ");
+    man.address = sc.nextLine();
+    System.out.println("Enter Manager's Salary: ");
+    man.salary = sc.nextDouble();
+    System.out.println("Enter Manager's Department: ");
+    man.department = sc.nextLine();
+    
+    // Print the officer's information
+    System.out.println("Officer Information:");
+    System.out.println("Name: " + off.name);
+    System.out.println("Age: " + off.age);
+    System.out.println("Phone Number: " + off.phoneNumber);
+    System.out.println("Address: " + off.address);
+    off.printSalary();
+    System.out.println("Specialization: " + off.specialization);
+    
+    // Print the manager's information
+    System.out.println("\nManager Information:");
+    System.out.println("Name: " + man.name);
+    System.out.println("Age: " + man.age);
+    System.out.println("Phone Number: " + man.phoneNumber);
+    System.out.println("Address: " + man.address);
+    man.printSalary();
+    System.out.println("Department: " + man.department);
+  }
+}
