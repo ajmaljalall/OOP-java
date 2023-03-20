@@ -1,0 +1,19 @@
+import java.util.*;
+class Prime
+{
+    public static void main (String args[])
+    {
+        Scanner sc = new Scanner (System.in);
+        System.out.println ("Enter a number to check whether it is prime or not: ");
+        int a = sc.nextInt();
+        if (a==1)
+            System.out.println (a+" is neither prime nor composite");
+        if (a==2)
+            System.out.println (a+" is a prime number");
+        for (int i=3; i<a/2; i++)
+            if (a%i==0)
+                System.out.println (a+" is not a prime number");
+            else
+                System.out.println (a+" is a prime number");
+    }
+}
