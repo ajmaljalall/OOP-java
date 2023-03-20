@@ -1,0 +1,22 @@
+import java.util.*;
+class Trace
+{
+	public static void main(String args[])
+	{
+		Scanner sc=new Scanner(System.in);
+		int a[][]=new int[5][5];
+		System.out.println("Enter the Rows & Coloumns:");
+		int m=sc.nextInt();
+		int n=sc.nextInt();
+		int sum=0;
+		System.out.println("Enter an "+m+"X"+n+" Matrix");
+		for (int i=0;i<m;i++)
+			for (int j=0;j<n;j++)
+				a[i][j]=sc.nextInt();
+		for (int i=0;i<m;i++)
+			for (int j=0;j<n;j++)
+				if (i==j)
+					sum+=a[i][j];
+		System.out.println("Trace of the given Matrix is: "+sum);
+	}
+}
